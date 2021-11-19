@@ -11,14 +11,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import login
 
-# Create your views here.
-class CustomLoginView(LoginView): # Essa é a funcionalidade de login customizada do django
-    template_name = 'base/login.html'
-    fields = '__all__' # Aqui fica as chaves do seu ojeto definida em seus campos de input do django admin
-    redirect_authenticated_user = True # Se a operação ocorrer com sucesso o usuario sera autenticado e redireciona a pagina principal
-    
-    def get_success_url(self):
-        return reverse_lazy('tasks') # Aqui fica o redirecionamento após excução com sucesso
+
 
 class RagisterPage(FormView): # Essa é a funcionalidade de cadastro de usario customizada do django
     template_name = 'base/register.html' # Aqui você pode dar nome ao seu template
